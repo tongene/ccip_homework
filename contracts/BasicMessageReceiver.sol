@@ -16,6 +16,7 @@ contract BasicMessageReceiver is CCIPReceiver, Withdraw {
     address latestSender;
     string latestMessage;
 
+ 
     event MessageReceived(
         bytes32 latestMessageId,
         uint64 latestSourceChainSelector,
@@ -23,7 +24,7 @@ contract BasicMessageReceiver is CCIPReceiver, Withdraw {
         string latestMessage
     );
 
-    constructor(address router) CCIPReceiver(router) {}
+    constructor(address router) CCIPReceiver(router){}
 
     function _ccipReceive(
         Client.Any2EVMMessage memory message
